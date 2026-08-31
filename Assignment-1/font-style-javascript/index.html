@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Font Style</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Change Paragraph Font Style</h2>
+
+    <label>Select Font:</label>
+
+    <select id="fontSelect" onchange="changeFont()">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+    </select>
+
+    <p id="myParagraph">
+        This paragraph changes its font style based on your selection.
+    </p>
+
+
+    <script>
+
+        function changeFont() {
+
+            let font = document.getElementById("fontSelect").value;
+
+            document.getElementById("myParagraph").style.fontFamily = font;
+        }
+
+    </script>
+
+</body>
+</html>
