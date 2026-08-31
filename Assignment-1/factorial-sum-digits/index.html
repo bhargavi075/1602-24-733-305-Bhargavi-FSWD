@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial and Sum of Digits</title>
+</head>
+
+<body>
+
+    <h2>Factorial and Sum of Digits</h2>
+
+    <script>
+
+        // Function to find factorial
+        function factorial(n) {
+
+            let fact = 1;
+
+            for (let i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+
+            return fact;
+        }
+
+
+        // Function to find sum of digits
+        function sumOfDigits(n) {
+
+            let sum = 0;
+
+            while (n > 0) {
+
+                sum = sum + (n % 10);
+
+                n = Math.floor(n / 10);
+            }
+
+            return sum;
+        }
+
+
+        // Get input using prompt()
+        let n = parseInt(prompt("Enter a positive integer:"));
+
+
+        // Check whether input is valid
+        if (n > 0 && !isNaN(n)) {
+
+            let fact = factorial(n);
+
+            let sum = sumOfDigits(n);
+
+
+            // Display output using alert()
+            alert(
+                "Number = " + n +
+                "\nFactorial = " + fact +
+                "\nSum of Digits = " + sum
+            );
+
+        } else {
+
+            alert("Please enter a valid positive integer.");
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Cricket Scoreboard</title>
+
+    <style>
+
+        /* General Styling */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            color: #222;
+        }
+
+
+        /* Header */
+
+        header {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            margin: 8px;
+        }
+
+
+        /* Match Information */
+
+        .match-info {
+            text-align: center;
+            background-color: white;
+            margin: 20px auto;
+            padding: 15px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+
+        /* Teams */
+
+        .teams {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px;
+        }
+
+        .team {
+            width: 350px;
+            text-align: center;
+            padding: 25px;
+            border: 2px solid #333;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+
+        /* Team Colors */
+
+        .india {
+            border-top: 8px solid #138808;
+        }
+
+        .australia {
+            border-top: 8px solid #f5c400;
+        }
+
+
+        /* Team Logo */
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .india-logo {
+            background-color: #138808;
+        }
+
+        .australia-logo {
+            background-color: #d4a900;
+        }
+
+
+        /* Score */
+
+        .score {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+
+        /* Leading Team */
+
+        .leading {
+            background-color: #d9f99d;
+            font-family: Georgia, serif;
+        }
+
+        .leading .score {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+
+        /* Match Details */
+
+        .details {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .details h2 {
+            color: #172554;
+            border-bottom: 2px solid #172554;
+            padding-bottom: 8px;
+        }
+
+
+        /* Status */
+
+        .status {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: green;
+        }
+
+
+        /* Scorecard */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #555;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #172554;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f5f9;
+        }
+
+
+        /* Footer */
+
+        footer {
+            background-color: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+
+        /* Mobile View */
+
+        @media (max-width: 700px) {
+
+            .teams {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team {
+                width: 80%;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>ICC T20 World Cup 2026</h1>
+
+        <p>LIVE CRICKET MATCH</p>
+
+    </header>
+
+
+    <!-- Match Information -->
+
+    <div class="match-info">
+
+        <p><b>Venue:</b> Wankhede Stadium, Mumbai</p>
+
+        <p><b>India vs Australia</b></p>
+
+    </div>
+
+
+    <!-- Teams -->
+
+    <div class="teams">
+
+
+        <!-- India -->
+
+        <div class="team india leading">
+
+            <div class="logo india-logo">
+                IND
+            </div>
+
+            <h2>India</h2>
+
+            <div class="score">
+                185/4
+            </div>
+
+            <p>Overs: 18.2</p>
+
+            <p>Wickets: 4</p>
+
+        </div>
+
+
+        <!-- Australia -->
+
+        <div class="team australia">
+
+            <div class="logo australia-logo">
+                AUS
+            </div>
+
+            <h2>Australia</h2>
+
+            <div class="score">
+                180/7
+            </div>
+
+            <p>Overs: 20</p>
+
+            <p>Wickets: 7</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Current Match Details -->
+
+    <div class="details">
+
+        <h2>Current Batsmen</h2>
+
+        <p><b>Virat Kohli:</b> 72* (45 balls)</p>
+
+        <p><b>Hardik Pandya:</b> 35* (18 balls)</p>
+
+
+        <h2>Bowler Details</h2>
+
+        <p>
+            <b>Bowler:</b> Pat Cummins
+        </p>
+
+        <p>
+            3.2 overs | 28 runs | 1 wicket
+        </p>
+
+
+        <h2>Required Run Rate</h2>
+
+        <p>
+            10.50 runs per over
+        </p>
+
+
+        <div class="status">
+            India is leading
+        </div>
+
+    </div>
+
+
+    <!-- Batting Scorecard -->
+
+    <div class="details">
+
+        <h2>Top 5 Batting Scorecard</h2>
+
+        <table>
+
+            <tr>
+                <th>Player</th>
+                <th>Runs</th>
+                <th>Balls</th>
+                <th>4s</th>
+                <th>6s</th>
+                <th>Strike Rate</th>
+            </tr>
+
+            <tr>
+                <td>Virat Kohli</td>
+                <td>72</td>
+                <td>45</td>
+                <td>7</td>
+                <td>2</td>
+                <td>160.00</td>
+            </tr>
+
+            <tr>
+                <td>Rohit Sharma</td>
+                <td>55</td>
+                <td>32</td>
+                <td>6</td>
+                <td>3</td>
+                <td>171.87</td>
+            </tr>
+
+            <tr>
+                <td>Hardik Pandya</td>
+                <td>35</td>
+                <td>18</td>
+                <td>3</td>
+                <td>2</td>
+                <td>194.44</td>
+            </tr>
+
+            <tr>
+                <td>KL Rahul</td>
+                <td>25</td>
+                <td>20</td>
+                <td>2</td>
+                <td>1</td>
+                <td>125.00</td>
+            </tr>
+
+            <tr>
+                <td>Suryakumar Yadav</td>
+                <td>18</td>
+                <td>12</td>
+                <td>2</td>
+                <td>1</td>
+                <td>150.00</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>Live Cricket Scoreboard</p>
+
+        <p>© 2026 College Cricket Club</p>
+
+    </footer>
+
+
+</body>
+
+</html>

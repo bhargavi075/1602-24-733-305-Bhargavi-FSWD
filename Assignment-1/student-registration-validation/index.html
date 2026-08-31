@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Student Registration</h2>
+
+        <form onsubmit="return validateForm()">
+
+            <label>Student ID:</label>
+            <input type="text" id="studentId"
+                   placeholder="Example: S12345">
+
+            <label>Student Name:</label>
+            <input type="text" id="studentName"
+                   placeholder="Example: Rahul Kumar">
+
+            <label>Email Address:</label>
+            <input type="text" id="email"
+                   placeholder="Example: user@gmail.com">
+
+            <label>Mobile Number:</label>
+            <input type="text" id="mobile"
+                   placeholder="Example: 9876543210">
+
+            <label>Password:</label>
+            <input type="password" id="password"
+                   placeholder="Enter password">
+
+            <button type="submit">Register</button>
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        function validateForm() {
+
+            // Get values from the form
+            let studentId = document.getElementById("studentId").value;
+            let studentName = document.getElementById("studentName").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+            let password = document.getElementById("password").value;
+
+
+            // a. Student ID
+            // S followed by exactly 5 digits
+            let idPattern = /^S\d{5}$/;
+
+
+            // b. Student Name
+            // Only alphabets and spaces, minimum 5 characters
+            let namePattern = /^[A-Za-z ]{5,}$/;
+
+
+            // c. Email
+            let emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.com$/;
+
+
+            // d. Mobile Number
+            // Exactly 10 digits and starts with 6, 7, 8 or 9
+            let mobilePattern = /^[6-9]\d{9}$/;
+
+
+            // e. Password
+            // Minimum 8 characters
+            // At least one uppercase
+            // At least one lowercase
+            // At least one digit
+            // At least one special character
+            let passwordPattern =
+                /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*!]).{8,}$/;
+
+
+            // Validate Student ID
+            if (!idPattern.test(studentId)) {
+                alert("Invalid Student ID. Use S followed by exactly 5 digits.");
+                return false;
+            }
+
+
+            // Validate Student Name
+            if (!namePattern.test(studentName)) {
+                alert("Invalid Student Name. Use only alphabets and spaces, minimum 5 characters.");
+                return false;
+            }
+
+
+            // Validate Email
+            if (!emailPattern.test(email)) {
+                alert("Invalid Email. Use format username@domain.com");
+                return false;
+            }
+
+
+            // Validate Mobile
+            if (!mobilePattern.test(mobile)) {
+                alert("Invalid Mobile Number. Enter exactly 10 digits starting with 6, 7, 8 or 9.");
+                return false;
+            }
+
+
+            // Validate Password
+            if (!passwordPattern.test(password)) {
+                alert("Invalid Password. Minimum 8 characters with uppercase, lowercase, digit and special character.");
+                return false;
+            }
+
+
+            // If everything is valid
+            alert("Registration Successful!");
+
+            return true;
+        }
+
+    </script>
+
+</body>
+</html>
