@@ -1,5 +1,5 @@
 
-# React Practical Programs
+# Assignment-2
 
 ## Question 1: Hello React
 A simple React component displaying Hello React
